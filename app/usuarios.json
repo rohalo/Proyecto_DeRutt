@@ -1,0 +1,13 @@
+{
+  "usuarios": [{
+    "id": 0,
+    "correo": "pedro@gmail.com",
+    "password": "jiji",
+    "nombre": "monica",
+    "apellidoP": "hernandez",
+    "apellidoM": "perez",
+    "sexo": "mujer",
+    "saldo": 23,
+    "estado": false
+  }]
+}

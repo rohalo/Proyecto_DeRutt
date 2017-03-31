@@ -1,0 +1,128 @@
+<div ng-controller="AboutCtrl" class="container-fluid">
+  <div class="container-fluid screenCenter textosColor" >
+    <div class="panel panel-default container-fluid">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Lista de dispositivos</div>
+      <div class="panel-body">
+        <input type="text" ng-model="search" placeholder="Busqueda equipo"/>
+      </div>
+      <!-- List group -->
+
+    <div class="container-fluid ">
+      <table class="table table-responsive ">
+        <thead>
+          <tr>
+            <th>Dispositivo</th>
+            <th>Numero de telefono</th>
+            <th>Marca telefono</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+
+        <tbody ng-repeat="celular in celulares | orderBy:'dispositivo'|filter:search">
+          <tr>
+            <td>{{celular.dispositivo}}</td>
+            <td>{{celular.numero}}</td>
+            <td>{{celular.marca}}</td>
+
+            <td>
+              <div class="row">
+              <div class="form-group">
+              <div><button type="button" class="btn btn-default btn" data-toggle="modal" data-target="#modificarModal"><i class="glyphicon glyphicon-pencil"></i></button></div>
+            </div>
+            <div class="form-group">
+            <div><button type="button" class="btn btn-default btn"><i class="glyphicon glyphicon-trash"></i></button></div>
+          </div>
+          </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <a class= "btn btn-success" data-toggle="modal" data-target="#agregarModal">Agregar</a>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- Modal crear  -->
+
+
+<div class="modal fade" id="agregarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content textosColor">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="text-center">Agregar Dispositivo</h2>
+      </div>
+      <div class="modal-body">
+
+        <div class="tab-content">
+          <div id="contacto" class="tab-pane fade in active">
+            <form>
+              <div class="form-group">
+              <label for="Dispositivo">Dispositivo a elegir</label>
+              <input type="Text" class="form-control" ng-model="dispositivo" id="Dispositivo" placeholder="Dispositivo">
+              </div>
+            <div class="form-group">
+              <label for="Telefono">Telefono</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="Telefono">
+            </div>
+            <div class="form-group">
+              <label for="Telefono">Marca</label>
+              <select ng-model="marcaCelulares" ng-options="marca.marcaId as (marca.fabricante+'-'+marca.subMarca ) for marca in marcas">
+              </select>
+            </div>
+
+            <a href="#" class="btn btn-success"  data-toggle="modal" ng-click="">Agregar</a>
+            </form>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal modificar -->
+
+
+  <div class="modal fade" id="modificarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content textosColor">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h2 class="text-center">Modificar Dispositivo</h2>
+        </div>
+        <div class="modal-body">
+
+          <div class="tab-content">
+            <div id="contacto" class="tab-pane fade in active">
+              <form>
+                <div class="form-group">
+                <label for="Dispositivo">Dispositivo a elegir</label>
+                <input type="Text" class="form-control" ng-model="dispositivo" id="Dispositivo" placeholder="">
+                </div>
+              <div class="form-group">
+                <label for="Telefono">Telefono</label>
+                <input type="tel" class="form-control" id="telefono" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="Telefono">Marca</label>
+                <select ng-model="marcaCelulares" ng-options="marca.marcaId as (marca.fabricante+'-'+marca.subMarca ) for marca in marcas">
+                </select>
+              </div>
+
+              <a href="#" class="btn btn-success"  data-toggle="modal" ng-click="" >Modificar</a>
+              </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
