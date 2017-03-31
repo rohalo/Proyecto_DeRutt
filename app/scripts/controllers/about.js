@@ -10,6 +10,35 @@
 angular.module('proyectoApp')
   .controller('AboutCtrl', function ($scope) {
 
+    $scope.modal=function(viaje){
+      $
+    }
+
+    var viajes=[
+
+      {
+        viajeId: 1,
+        estacion:"Pino suarez",
+        servicio: "Metro",
+        fecha:"2017/03/31",
+        hora:"01:30"
+      },
+      {
+        viajeId: 2,
+        estacion:"Salto del agua",
+        servicio: "Metro",
+        fecha:"2017/03/31",
+        hora:"03:30"
+      },
+      {
+        viajeId: 3,
+        estacion:"Pino suarez",
+        servicio: "Metro",
+        fecha:"2017/03/31",
+        hora:"07:30"
+      }
+    ];
+
     var celulares=[
 
       {
@@ -37,7 +66,7 @@ angular.module('proyectoApp')
       tipo:"Visa",
       dueno: "Karen Perez"
     }
-  ]
+  ];
 
   var marcas=[
 
@@ -50,7 +79,7 @@ angular.module('proyectoApp')
       subMarca:"One m9"
     }
 
-  ]
+  ];
 
   var tipoTarjeta=[
 
@@ -76,4 +105,5 @@ angular.module('proyectoApp')
   $scope.celulares=celulares;
   $scope.marcas=marcas;
   $scope.tarjetas=tarjetas;
+  $scope.viajes=viajes;
   });

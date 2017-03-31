@@ -114,3 +114,7 @@
 .fondoTablas{
   background-color: gray;
 }
+
+.noMostrar{
+  display: none;
+}
